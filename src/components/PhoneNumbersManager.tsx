@@ -28,7 +28,7 @@ export function PhoneNumbersManager() {
   }, []);
 
   const getAllNumbersHere = async () => {
-    const res = await axios.get('https://warhol-backend-main-app.vercel.app//api/v1/calling/get-all-numbers');
+    const res = await axios.get('https://warhol-backend-main-app.vercel.app/api/v1/calling/get-all-numbers');
     setNumbers(res?.data?.data);
   };
 
@@ -65,7 +65,7 @@ export function PhoneNumbersManager() {
       formDataObj.append("audio_file", formData.audio_file);
 
       const res = await axios.post(
-        "https://warhol-backend-main-app.vercel.app//api/v1/calling/add-number",
+        "https://warhol-backend-main-app.vercel.app/api/v1/calling/add-number",
         formDataObj,
         {
           headers: {
@@ -153,7 +153,7 @@ export function PhoneNumbersManager() {
     setIsLoading(true);
     try {
       const response = await axios.put(
-        `https://warhol-backend-main-app.vercel.app//api/v1/calling/update-text/${editingNumber.id}`,
+        `https://warhol-backend-main-app.vercel.app/api/v1/calling/update-text/${editingNumber.id}`,
         { text_content: editFormData.text_content }
       );
 
@@ -196,7 +196,7 @@ export function PhoneNumbersManager() {
       formDataObj.append("audio_file", replaceAudioData.audio_file);
 
       const response = await axios.put(
-        `https://warhol-backend-main-app.vercel.app//api/v1/calling/update-audio/${editingNumber.id}`,
+        `https://warhol-backend-main-app.vercel.app/api/v1/calling/update-audio/${editingNumber.id}`,
         formDataObj,
         {
           headers: {
@@ -232,7 +232,7 @@ export function PhoneNumbersManager() {
     setIsLoading(true);
     try {
       const response = await axios.delete(
-        `https://warhol-backend-main-app.vercel.app//api/v1/calling/delete-number/${number.id}`
+        `https://warhol-backend-main-app.vercel.app/api/v1/calling/delete-number/${number.id}`
       );
 
       if (response.data.success) {
@@ -257,7 +257,7 @@ export function PhoneNumbersManager() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        'https://warhol-backend-main-app.vercel.app//api/v1/calling/configure-webhook',
+        'https://warhol-backend-main-app.vercel.app/api/v1/calling/configure-webhook',
         { phone_number: number.phone_number }
       );
 
