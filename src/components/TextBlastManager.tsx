@@ -58,7 +58,7 @@ export function TextBlastManager() {
   const fetchCallLogs = async () => {
     setIsLoadingLogs(true);
     try {
-      const response = await axios.get('https://warhol-backend-main-app.vercel.app/api/v1/calling/get-logs');
+      const response = await axios.get('https://warhol-backend-mainapp.vercel.app/api/v1/calling/get-logs');
       const allLogs: CallLog[] = response?.data?.data || [];
       setAllCallLogs(allLogs);
       
@@ -222,7 +222,7 @@ export function TextBlastManager() {
       for (let i = 0; i < batches.length; i++) {
         setCurrentBatch(i + 1);
         
-        const response = await axios.post('https://warhol-backend-main-app.vercel.app/api/v1/calling/send-blast', {
+        const response = await axios.post('https://warhol-backend-mainapp.vercel.app/api/v1/calling/send-blast', {
           message: message.trim(),
           phone_numbers: batches[i]
         });

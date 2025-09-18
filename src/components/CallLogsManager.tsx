@@ -23,7 +23,7 @@ export function CallLogsManager() {
   const fetchCallLogs = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('https://warhol-backend-main-app.vercel.app/api/v1/calling/get-logs');
+      const response = await axios.get('https://warhol-backend-mainapp.vercel.app/api/v1/calling/get-logs');
       const allLogs = response?.data?.data || [];
       setLogs(allLogs);
       

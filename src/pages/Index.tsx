@@ -25,7 +25,7 @@ const CostAnalyticsManager = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('https://warhol-backend-main-app.vercel.app/api/v1/calling/get-cost-breakdown', {
+      const response = await axios.post('https://warhol-backend-mainapp.vercel.app/api/v1/calling/get-cost-breakdown', {
         start_date: startDate || undefined,
         end_date: endDate || undefined,
       });
@@ -55,7 +55,7 @@ const CostAnalyticsManager = () => {
     }
 
     try {
-      const response = await axios.post('https://warhol-backend-main-app.vercel.app/api/v1/calling/update-budget', {
+      const response = await axios.post('https://warhol-backend-mainapp.vercel.app/api/v1/calling/update-budget', {
         total_budget: parseFloat(budget)
       });
       const result = response.data;
